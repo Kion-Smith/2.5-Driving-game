@@ -1,5 +1,6 @@
 package Main;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -39,6 +40,7 @@ public class gamePanel extends JPanel implements Runnable,KeyListener
 		super.addNotify();
 		if(thread == null)
 		{
+			addKeyListener(this);
 			thread = new Thread(this);
 			thread.start();
 		}
@@ -88,15 +90,15 @@ public class gamePanel extends JPanel implements Runnable,KeyListener
 		BufferedImage test = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
 		try
 		{
-			test = ImageIO.read(new File("C:\\Users\\NeonKion\\Desktop\\2.5 driving game ideas\\Pictues\\picture(not pixilized and defaault).png"));
 			
+			test = ImageIO.read(getClass().getResourceAsStream("/picture(not pixilized and defaault).png"));
+		
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
 		g.drawImage(test, 0, 0, WIDTH, HEIGHT, null);
-		
 	}
 	public void draw()
 	{
@@ -111,12 +113,12 @@ public class gamePanel extends JPanel implements Runnable,KeyListener
 
 	public void keyPressed(KeyEvent e) 
 	{
-		
+	
 	}
 	
 	public void keyReleased(KeyEvent e) 
 	{
-
+	
 	}
 
 	public void keyTyped(KeyEvent e) 
