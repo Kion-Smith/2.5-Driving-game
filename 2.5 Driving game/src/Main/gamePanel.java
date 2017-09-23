@@ -13,6 +13,8 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
+import GameStates.gameStateManager;
+
 public class gamePanel extends JPanel implements Runnable,KeyListener
 {
 	// Dimensions
@@ -27,8 +29,9 @@ public class gamePanel extends JPanel implements Runnable,KeyListener
 	private Thread thread;// threads
 	private BufferedImage image;// for render
 	private Graphics2D g;// for drawing
+	private gameStateManager gsm;
 	
-	
+	private BufferedImage test;//testing graphics
 	public gamePanel()
 	{
 		setPreferredSize(new Dimension(WIDTH,HEIGHT));//set size
@@ -48,8 +51,10 @@ public class gamePanel extends JPanel implements Runnable,KeyListener
 	public void init()
 	{
 		isRunning = true;
+		test = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
 		image = new BufferedImage(WIDTH,HEIGHT,1);
 		g = (Graphics2D) image.getGraphics();
+		gameStateManager gsm = new gameStateManager();
 
 	}
 	public void run() 
@@ -87,7 +92,14 @@ public class gamePanel extends JPanel implements Runnable,KeyListener
 	}
 	public void render() 
 	{
-		BufferedImage test = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
+		
+		Graphics g2 = getGraphics();
+		g2.drawImage(image,0,0,WIDTH,HEIGHT,null );
+		g2.dispose();
+	}
+	public void draw()
+	{
+		//gsm.draw(g);
 		try
 		{
 			
@@ -100,15 +112,9 @@ public class gamePanel extends JPanel implements Runnable,KeyListener
 		}
 		g.drawImage(test, 0, 0, WIDTH, HEIGHT, null);
 	}
-	public void draw()
-	{
-		
-	}
 	public void update() 
 	{
-		Graphics g2 = getGraphics();
-		g2.drawImage(image,0,0,WIDTH,HEIGHT,null );
-		g2.dispose();
+	//	gsm.update();
 	}
 
 	public void keyPressed(KeyEvent e) 
