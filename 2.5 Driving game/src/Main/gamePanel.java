@@ -14,6 +14,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import GameStates.gameStateManager;
+import Input.keyHandler;
 
 public class gamePanel extends JPanel implements Runnable,KeyListener
 {
@@ -119,12 +120,12 @@ public class gamePanel extends JPanel implements Runnable,KeyListener
 
 	public void keyPressed(KeyEvent e) 
 	{
-	
+		keyHandler.keySet(e.getKeyCode(),true);
 	}
 	
 	public void keyReleased(KeyEvent e) 
 	{
-	
+		keyHandler.keySet(e.getKeyCode(),false);
 	}
 
 	public void keyTyped(KeyEvent e) 
