@@ -56,6 +56,10 @@ public class gameStateManager
 	{
 		gS[i] = null;
 	}
+	public void setPaused(boolean b)
+	{
+		paused = b;
+	}
 	public void update()
 	{
 		if(paused)

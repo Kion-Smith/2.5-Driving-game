@@ -55,7 +55,7 @@ public class gamePanel extends JPanel implements Runnable,KeyListener
 		test = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
 		image = new BufferedImage(WIDTH,HEIGHT,1);
 		g = (Graphics2D) image.getGraphics();
-		gameStateManager gsm = new gameStateManager();
+		gsm = new gameStateManager();
 
 	}
 	public void run() 
@@ -100,7 +100,8 @@ public class gamePanel extends JPanel implements Runnable,KeyListener
 	}
 	public void draw()
 	{
-		//gsm.draw(g);
+		gsm.draw(g);
+		/*
 		try
 		{
 			
@@ -112,10 +113,11 @@ public class gamePanel extends JPanel implements Runnable,KeyListener
 			e.printStackTrace();
 		}
 		g.drawImage(test, 0, 0, WIDTH, HEIGHT, null);
+		*/
 	}
 	public void update() 
 	{
-	//	gsm.update();
+		gsm.update();
 	}
 
 	public void keyPressed(KeyEvent e) 
