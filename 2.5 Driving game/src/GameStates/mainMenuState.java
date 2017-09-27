@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 
+import Input.keyHandler;
+
 public class mainMenuState extends gameStates 
 {
 	public mainMenuState(gameStateManager gsm) 
@@ -34,14 +36,20 @@ public class mainMenuState extends gameStates
 		g.setFont(new Font("Arial",Font.PLAIN,48));
 		g.drawString("DRIVING GAME", (1024/2) - 150, (768/2) - 150);
 		g.setFont(new Font("Arial",Font.PLAIN,32));
-		g.drawString("Place holder until graphics are done", (1024/2) - 150, (768/2) - 50);
+		g.drawString("Place holder until graphics are done", (1024/2) - 200, (768/2) - 50);
+		
+		g.setFont(new Font("Arial",Font.PLAIN,32));
+		g.drawString("PLAY", (1024/2) - 50, (768/2) );
 		
 	}
 
 	
 	public void handleInput() 
 	{
-		
-		
+		if(keyHandler.isPressed(keyHandler.ENTER)) 
+		{
+			gsm.setState(gsm.PLAY);
+		}
+			
 	}
 }

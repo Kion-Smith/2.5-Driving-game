@@ -12,7 +12,7 @@ public class gameStateManager
 	private int prevState;
 	private final int NUMSTATES = 4;
 	private final int MENU =0;
-	private final int PLAY =1;
+	public final int PLAY =1;
 	private final int WIN = 2;
 	private final int GAMEOVER =3;
 	
