@@ -41,12 +41,12 @@ public class playState extends gameStates
 			//Isolate the background to be the car
 			//		- Change turning to be an object
 			// 		-create road
-			if(keyHandler.isPressed(keyHandler.RIGHT)) 
+			if(keyHandler.isPressed(keyHandler.LEFT)) 
 			{
 				test = ImageIO.read(getClass().getResourceAsStream("/picture(not pixilized and turning).png"));
 				g.drawImage(test, 0, 0, 1024, 768, null);
 			}
-			else if(keyHandler.isPressed(keyHandler.LEFT))
+			else if(keyHandler.isPressed(keyHandler.RIGHT))
 			{
 				
 				test = ImageIO.read(getClass().getResourceAsStream("/picture(not pixilized and turning).png"));
