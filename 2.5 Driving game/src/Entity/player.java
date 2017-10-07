@@ -2,10 +2,18 @@ package Entity;
 
 public class player  
 {	
-
 	
-	private int xPos;
-	private int yPos;
+	//might be temp
+	public int xH = 5;
+	public int xW = 5;
+	
+
+	public int x;
+	public int y;
+	
+	private int height;
+	
+	private int fov;
 	
 	private  final int  IDLE =0;
 	private final int TURN = 1;
@@ -15,12 +23,19 @@ public class player
 	private String fileName;
 	
 	//Some sort of private information for other turning animation
-	private boolean[] carSprite ;
+	private boolean[] carSprite;
 	
 	public player()
 	{
 		carSprite = new boolean[actionAmount];
 	}
+	
+	public void setLocation(int x,int y)
+	{
+		this.x = x;
+		this.y = y;
+	}
+	
 	
 	public void setCarState(int state)
 	{
@@ -36,42 +51,33 @@ public class player
 			}
 		}
 	}
-
-	public void setImage()
+	public int getCarState()
 	{
 		for(int i =0;i<carSprite.length;i++)
 		{
 			if(carSprite[i] == true)
 			{
-				if(i == IDLE)
-				{
-					fileName = "/idle.png";
-				}
-				else
-				{
-					fileName = "/turing.png";
-				}
+				return i;
 			}
 		}
+		return -1;
+	}
+	public String setImage()
+	{
+		if(getCarState() == IDLE)
+		{
+			fileName = "/idle";
+		}
+		else if(getCarState() == TURN)
+		{
+			fileName = "/turn";
+		}
+		else
+		{
+			fileName = "";
+		}
+		
+		return fileName;
 	}
 
-	public void setXPos(int x)
-	{
-		xPos = x;
-		
-	}
-	public int getXPos()
-	{
-		return xPos;
-	}
-	
-	public void setYPos(int y)
-	{
-		yPos = y;
-		
-	}
-	public int getYPos()
-	{
-		return yPos;
-	}
 }

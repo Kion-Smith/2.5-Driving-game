@@ -6,11 +6,14 @@ import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
 
+import Entity.player;
 import Input.keyHandler;
 
 public class playState extends gameStates
 {
+	
 	BufferedImage test;
+	player p;
 
 	public playState(gameStateManager gsm) 
 	{
@@ -21,6 +24,7 @@ public class playState extends gameStates
 	public void init() 
 	{
 		test = new BufferedImage(1024,768,BufferedImage.TYPE_INT_RGB);
+		p = new player();
 	}
 
 	public void update() 
@@ -61,6 +65,25 @@ public class playState extends gameStates
 		catch(Exception e)
 		{
 			e.printStackTrace();
+		}
+		////PLAYER RAYCAST///////////////////
+		
+		g.setColor(Color.WHITE);
+		g.fillRect(1024, 0, 1024, 768);
+		
+		p.x = 1024+300;
+		p.y =768/2;
+		
+		g.setColor(Color.BLUE);
+		g.fillRect(p.x, p.y, p.xW, p.xH);
+		
+		if(keyHandler.isPressed(keyHandler.LEFT))
+		{
+			//g.rotate(30,p.x, p.y);
+		}
+		else if(keyHandler.isPressed(keyHandler.RIGHT))
+		{
+			//g.rotate(-30,p.x, p.y);
 		}
 		
 		
