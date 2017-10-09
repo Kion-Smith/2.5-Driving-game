@@ -1,6 +1,7 @@
 package GameStates;
 
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
@@ -77,17 +78,19 @@ public class playState extends gameStates
 		g.setColor(Color.BLUE);
 		g.fillRect(p.x, p.y, p.xW, p.xH);
 		
+		/*
 		if(keyHandler.isPressed(keyHandler.LEFT))
 		{
-			//g.rotate(30,p.x, p.y);
+			
 		}
 		else if(keyHandler.isPressed(keyHandler.RIGHT))
 		{
 			//g.rotate(-30,p.x, p.y);
 		}
-		
+		*/
 		
 	}
+	
 
 	public void handleInput() 
 	{
