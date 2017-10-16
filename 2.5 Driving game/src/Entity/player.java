@@ -7,11 +7,12 @@ public class player
 	public int xH = 5;
 	public int xW = 5;
 	
+	public int angle;//angle currently at
 
 	public int x;
 	public int y;
 	
-	private int height;
+	private int height;//aka z
 	
 	private int fov;
 	
