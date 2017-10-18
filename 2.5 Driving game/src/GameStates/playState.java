@@ -46,21 +46,28 @@ public class playState extends gameStates
 			//Isolate the background to be the car
 			//		- Change turning to be an object
 			// 		-create road
+			
+			
 			if(keyHandler.isPressed(keyHandler.LEFT)) 
 			{
+				p.setCarState(1);
+				p.draw(g);
 				test = ImageIO.read(getClass().getResourceAsStream("/picture(not pixilized and turning).png"));
-				g.drawImage(test, 0, 0, 1024, 768, null);
+			//	g.drawImage(test, 0, 0, 1024, 768, null);
 			}
 			else if(keyHandler.isPressed(keyHandler.RIGHT))
 			{
-				
+				p.setCarState(1);
+				p.draw(g);
 				test = ImageIO.read(getClass().getResourceAsStream("/picture(not pixilized and turning).png"));
-				g.drawImage(test, 0+1024, 0, -1024, 768, null);
+			//	g.drawImage(test, 0+1024, 0, -1024, 768, null);
 			}
 			else
 			{
+				p.setCarState(0);
+				p.draw(g);
 				test = ImageIO.read(getClass().getResourceAsStream("/2.5 driving game ideas/Pictues/CarHud(WIPS).png"));
-				g.drawImage(test, 0, 0, 1024, 768, null);
+			//	g.drawImage(test, 0, 0, 1024, 768, null);
 			}
 		}
 		catch(Exception e)

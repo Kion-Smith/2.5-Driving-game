@@ -1,5 +1,10 @@
 package Entity;
 
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+
+import javax.imageio.ImageIO;
+
 public class player  
 {	
 	
@@ -11,7 +16,6 @@ public class player
 
 	public int x;
 	public int y;
-	
 	private int height;//aka z
 	
 	private int fov;
@@ -23,11 +27,14 @@ public class player
 	
 	private String fileName;
 	
+	private BufferedImage playerImage;
+	
 	//Some sort of private information for other turning animation
 	private boolean[] carSprite;
 	
 	public player()
 	{
+		playerImage = new BufferedImage(1024,768,BufferedImage.TYPE_INT_RGB);
 		carSprite = new boolean[actionAmount];
 	}
 	
@@ -45,6 +52,7 @@ public class player
 			if(i==state)
 			{
 				carSprite[i] = true;
+				setImage();
 			}
 			else
 			{
@@ -67,11 +75,11 @@ public class player
 	{
 		if(getCarState() == IDLE)
 		{
-			fileName = "/idle";
+			fileName = "/2.5 driving game ideas/Pictues/CarHud(WIPS).png";
 		}
 		else if(getCarState() == TURN)
 		{
-			fileName = "/turn";
+			fileName = "/picture(not pixilized and turning).png";
 		}
 		else
 		{
@@ -79,6 +87,18 @@ public class player
 		}
 		
 		return fileName;
+	}
+	public void draw(Graphics2D g)
+	{
+		try
+		{
+			playerImage = ImageIO.read(getClass().getResourceAsStream(fileName));
+			g.drawImage(playerImage,0,0,1024,768,null);
+		}
+		catch(Exception e)
+		{
+			
+		}
 	}
 
 }
