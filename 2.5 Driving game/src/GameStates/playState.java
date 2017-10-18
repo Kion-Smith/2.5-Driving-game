@@ -59,7 +59,7 @@ public class playState extends gameStates
 			}
 			else
 			{
-				test = ImageIO.read(getClass().getResourceAsStream("/picture(not pixilized and defaault).png"));
+				test = ImageIO.read(getClass().getResourceAsStream("/2.5 driving game ideas/Pictues/CarHud(WIPS).png"));
 				g.drawImage(test, 0, 0, 1024, 768, null);
 			}
 		}
