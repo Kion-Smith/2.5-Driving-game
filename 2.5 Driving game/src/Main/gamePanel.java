@@ -19,7 +19,7 @@ import Input.keyHandler;
 public class gamePanel extends JPanel implements Runnable,KeyListener
 {
 	// Dimensions
-	public static final int WIDTH = 1024*2;// temp for showing player movements
+	public static final int WIDTH = 1024;// temp for showing player movements
 	public static final int HEIGHT = 768;
 	//time keeping
 	private final int FPS = 60;

@@ -76,15 +76,7 @@ public class playState extends gameStates
 		}
 		////PLAYER RAYCAST///////////////////
 		
-		g.setColor(Color.WHITE);
-		g.fillRect(1024, 0, 1024, 768);
-		
-		p.x = 1024+300;
-		p.y =768/2;
-		
-		g.setColor(Color.BLUE);
-		g.fillRect(p.x, p.y, p.xW, p.xH);
-		
+	
 		/*
 		if(keyHandler.isPressed(keyHandler.LEFT))
 		{
